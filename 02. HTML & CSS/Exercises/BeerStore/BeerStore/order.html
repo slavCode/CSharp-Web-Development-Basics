@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SoftUni Beers</title>
+    <link rel="stylesheet" href="style/form.css" />
+</head>
+<body>
+    <nav>
+        <div class="topnav">
+            <a class="logo" href="index.html"><img src="images/logo.png" /></a>
+            <a href="index.html">Home</a>
+            <a href="all-beers.html">See All Beers</a>
+            <a class="active" href="order.html">Order a Beer</a>
+            <a href="register.html">Register</a>
+            <a class="right" href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <center>
+            <form>
+                <h1>Order a Beer</h1>
+                <label>Brand</label>
+                <select>
+                    <option selected disabled>Select a brand</option>
+                    <option>Corona Extra 330ml.</option>
+                    <option>Heineken 330ml.</option>
+                    <option>Carlsberg 330ml.</option>
+                    <option>Stella Artois 330ml.</option>
+                </select>
+                <label>Quantity</label>
+                <input type="number" min="1" max="15" placeholder="Enter amount of beers (1-5)" />
+                <label>Destination</label>
+                <select>
+                    <option selected disabled>Select a destination</option>
+                    <option>Sofia</option>
+                    <option>Plovdiv</option>
+                    <option>Varna</option>
+                    <option>Bourgas</option>
+                </select>
+                <label>Enter your birthdate</label>
+                <input type="date" placeholder="mm/dd/yyyy" />
+                <label>Got an opinion, comment, recommendation? Share it with us!</label>
+                <input type="text" placeholder="Share your opinion with us!" />
+                <input type="submit" value="Submit" />
+            </form>
+        </center>
+    </main>
+
+    <footer>
+        <hr />
+        <p><em>&copy; 2017 &ndash; SoftUni Beers</em></p>
+    </footer>
+</body>
+
+</html>

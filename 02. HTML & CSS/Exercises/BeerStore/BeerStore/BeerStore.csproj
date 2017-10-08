@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5E8C3B97-CAC0-472B-BE39-D07B2E943E74}</ProjectGuid>
+    <ProjectGuid>{821EB5D0-85BC-43B5-8829-42D4A92F670A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WelcomeToHTML</RootNamespace>
-    <AssemblyName>WelcomeToHTML</AssemblyName>
+    <RootNamespace>BeerStore</RootNamespace>
+    <AssemblyName>BeerStore</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -75,22 +75,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="borders.html" />
-    <Content Include="colors.html" />
-    <Content Include="contact-us-form.html" />
-    <Content Include="contact.html" />
-    <Content Include="Styles\contact-us-form.css" />
-    <Content Include="fruits.html" />
-    <Content Include="headings.html" />
-    <Content Include="hello.html" />
-    <Content Include="home.html" />
-    <Content Include="Styles\langs.css" />
-    <Content Include="langs.html" />
-    <Content Include="paragraphs.html" />
-    <Content Include="receipt.html" />
-    <Content Include="rectangles.html" />
-    <Content Include="todo.html" />
-    <Content Include="welcome.html" />
+    <Content Include="all-beers.html" />
+    <Content Include="Images\beer_1.png" />
+    <Content Include="Images\beer_2.png" />
+    <Content Include="Images\beer_3.png" />
+    <Content Include="Images\beer_4.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="index.html" />
+    <Content Include="template.html" />
+    <Content Include="login.html" />
+    <Content Include="order.html" />
+    <Content Include="register.html" />
+    <Content Include="style\form.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,9 +105,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60108</DevelopmentServerPort>
+          <DevelopmentServerPort>61740</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60108/</IISUrl>
+          <IISUrl>http://localhost:61740/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
