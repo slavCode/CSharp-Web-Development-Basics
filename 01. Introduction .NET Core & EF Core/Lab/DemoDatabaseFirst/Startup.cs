@@ -2,7 +2,7 @@
 {
     using Models;
 
-    public class Startup
+    public class StartUp
     {
         public static void Main()
         {

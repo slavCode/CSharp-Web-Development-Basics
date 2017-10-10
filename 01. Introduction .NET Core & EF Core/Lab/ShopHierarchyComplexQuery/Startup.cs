@@ -8,7 +8,7 @@
     using Data;
     using Models;
 
-    public class Startup
+    public class StartUp
     {
         private const string TerminatingCommand = "END";
         private const string RegisterCommand = "register";

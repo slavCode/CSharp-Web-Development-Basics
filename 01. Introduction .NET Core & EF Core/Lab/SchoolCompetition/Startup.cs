@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Startup
+    public class StartUp
     {
         public static void Main()
         {
