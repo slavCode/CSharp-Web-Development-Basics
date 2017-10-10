@@ -5,7 +5,7 @@
     using System.Net;
     using System;
 
-    class StartUp
+  public  class StartUp
     {
         public static void Main()
         {

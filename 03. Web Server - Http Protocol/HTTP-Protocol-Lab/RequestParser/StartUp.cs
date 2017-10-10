@@ -16,7 +16,7 @@
                 if (inputLine == "END") break;
 
 
-                var parts = inputLine.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+                var parts = inputLine.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
 
                 var path = $"/{parts[0]}";
@@ -31,7 +31,7 @@
             }
 
             var request = Console.ReadLine();
-            var requestParts = request.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            var requestParts = request.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             var requestMethod = requestParts[0];
             var requestPath = requestParts[1];
@@ -40,7 +40,7 @@
             var responseStatus = 404;
             var responseStatusText = "Not Found";
 
-            if (validUrls.ContainsKey(requestPath) 
+            if (validUrls.ContainsKey(requestPath)
              && validUrls[requestPath].Contains(requestMethod.ToLower()))
             {
                 responseStatus = 200;

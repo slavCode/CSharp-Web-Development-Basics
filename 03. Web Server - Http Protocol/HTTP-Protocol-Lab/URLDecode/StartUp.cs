@@ -3,9 +3,9 @@
     using System;
     using System.Net;
 
-    class StartUp
+    public class StartUp
     {
-       public static void Main()
+        public static void Main()
         {
             var input = Console.ReadLine();
             var webUtility = WebUtility.UrlDecode(input);
