@@ -10,12 +10,15 @@
 
     public class AccountController : Controller
     {
+        private const string RegisterView = @"account/register";
+        private const string LoginView = @"account/login";
+
         private readonly UserService users = new UserService();
 
         public IHttpResponse Register()
         {
             SetDefaultViewData();
-            return FileViewResponse(@"account/register");
+            return FileViewResponse(RegisterView);
         }
 
         public IHttpResponse Register(IHttpRequest req, RegisterUserViewModel model)
@@ -27,7 +30,7 @@
                 this.ViewData["showError"] = "block";
                 this.ViewData["error"] = "Invalid user details.";
 
-                return FileViewResponse(@"account\register");
+                return FileViewResponse(RegisterView);
             }
 
             var success = this.users.Create(model.Username, model.Password);
@@ -44,17 +47,17 @@
                 this.ViewData["showError"] = "block";
                 this.ViewData["error"] = "This username is taken";
 
-                return FileViewResponse(@"account\register");
+                return FileViewResponse(RegisterView);
             }
         }
 
         public IHttpResponse Login()
         {
             SetDefaultViewData();
-            return this.FileViewResponse(@"account\login");
+            return this.FileViewResponse(LoginView);
         }
 
-        public IHttpResponse Login(IHttpRequest req, LoginUserViewModel model)
+        public IHttpResponse Login(IHttpRequest req, LoginViewModel model)
         {
             var username = model.Username;
             var password = model.Password;
@@ -65,7 +68,7 @@
                 this.ViewData["errorMessage"] = "block";
                 this.ViewData["error"] = "Invalid username or password.";
 
-                return this.FileViewResponse(@"account\login");
+                return this.FileViewResponse(LoginView);
             }
 
             var success = users.Find(username, password);
@@ -82,7 +85,7 @@
                 this.ViewData["error"] = "Invalid username or password.";
                 this.ViewData["authDisplay"] = "none";
 
-                return this.FileViewResponse(@"account\login");
+                return this.FileViewResponse(LoginView);
             }
         }
 

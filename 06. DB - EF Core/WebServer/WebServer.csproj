@@ -6,7 +6,7 @@
     <StartupObject>WebServer.Launcher</StartupObject>
   </PropertyGroup>
 
-  <ItemGroup>
+    <ItemGroup>
     <None Include="ByTheCakeApplication\Resources\Shopping\finish-order.html" />
   </ItemGroup>
 

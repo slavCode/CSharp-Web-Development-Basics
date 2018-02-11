@@ -63,5 +63,18 @@ namespace WebServer.ByTheCakeApplication.Services
                 };
             }
         }
+
+        public int GetUserId(string username)
+        {
+            using (var db = new ByTheCakeDbContext())
+            {
+                var id = db
+                    .Users
+                    .FirstOrDefault(u => u.Username == username)
+                    .Id;
+
+                return id;
+            }
+        }
     }
 }

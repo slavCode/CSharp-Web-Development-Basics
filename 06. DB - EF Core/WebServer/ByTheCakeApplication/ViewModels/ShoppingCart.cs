@@ -6,6 +6,6 @@
     { 
         public const string SessionKey = "%<Current_Shoping_Key>%";
 
-        public IList<Cake> Orders { get; private set; } = new List<Cake>();
+        public IList<int> ProductIds { get; private set; } = new List<int>();
     }
 }

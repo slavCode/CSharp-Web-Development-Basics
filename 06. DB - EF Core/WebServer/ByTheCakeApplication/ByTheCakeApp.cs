@@ -1,15 +1,25 @@
-﻿using WebServer.ByTheCakeApplication.ViewModels.Account;
-
-namespace WebServer.ByTheCakeApplication
+﻿namespace WebServer.ByTheCakeApplication
 {
     using Controllers;
     using Server.Contracts;
     using Server.Routing.Contracts;
+    using ViewModels.Account;
+    using ViewModels.Products;
+
 
     public class ByTheCakeApp : IApplication
     {
         public void Configure(IAppRouteConfig appRouteConfig)
         {
+            appRouteConfig
+                .Get("/calculator",
+                    req => new CalculatorController().Calculate());
+
+            appRouteConfig
+                .Post("calculator",
+                    req => new CalculatorController().Calculate(
+                        req.FormData["number1"], req.FormData["number2"], req.FormData["mathOperator"]));
+
             appRouteConfig
                 .Get("/", req => new HomeController().Index());
 
@@ -17,16 +27,20 @@ namespace WebServer.ByTheCakeApplication
                 .Get("/about", req => new HomeController().About());
 
             appRouteConfig
-                .Get("/add", req => new CakesController().Add());
+                .Get("/add", req => new ProductsController().Add());
 
             appRouteConfig
                 .Post("/add",
-                 req => new CakesController().Add(
-                 req.FormData["name"], req.FormData["price"]));
-
+                    req => new ProductsController().Add(req, new ProductViewModel
+                    {
+                        Name = req.FormData["name"],
+                        Price = decimal.Parse(req.FormData["price"]),
+                        PictureUrl = req.FormData["pictureUrl"]
+                    }));
+            
             appRouteConfig
                 .Get("/search",
-                 req => new CakesController().Search(req));
+                 req => new ProductsController().Search(req));
 
             appRouteConfig
                 .Get("/register",
@@ -40,27 +54,18 @@ namespace WebServer.ByTheCakeApplication
                     Password = req.FormData["password"],
                     ConfirmPassword = req.FormData["confirm-password"]
                 }));
-
-            appRouteConfig
-                .Get("/calculator",
-                 req => new CalculatorController().Calculate());
-
-            appRouteConfig
-                .Post("calculator",
-                 req => new CalculatorController().Calculate(
-                 req.FormData["number1"], req.FormData["number2"], req.FormData["mathOperator"]));
-
+            
             appRouteConfig
                 .Get("/login", req => new AccountController().Login());
 
             appRouteConfig
                 .Post("/login", req => new AccountController().Login(
                     req,
-                    new LoginUserViewModel
-                {
-                    Username = req.FormData["username"],
-                    Password = req.FormData["password"]
-                }));
+                    new LoginViewModel
+                    {
+                        Username = req.FormData["username"],
+                        Password = req.FormData["password"]
+                    }));
 
             appRouteConfig
                 .Get("profile", req => new AccountController().Profile(req));
@@ -78,6 +83,17 @@ namespace WebServer.ByTheCakeApplication
             appRouteConfig
                 .Post("/shopping/finish-order", req => new ShoppingController().FinishOrder(req));
 
+            appRouteConfig
+                .Get("/cakes/{(?<id>[0-9]+)}",
+                 req => new ProductsController().Details(req));
+
+            appRouteConfig
+                .Get("/orders", req => new OrdersController().Orders(req));
+
+            // TODO
+            // OrderDetails
+            //appRouteConfig
+            //    .Get("/orderDetails/{(?<id>[0-9]+)}", req => new OrdersController().OrderDetails(req));
         }
     }
 }
