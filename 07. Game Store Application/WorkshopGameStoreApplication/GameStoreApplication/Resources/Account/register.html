@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="col-12">
+        <div class="text-center"><h1 class="display-3">Register</h1></div>
+        <br/>
+        
+        <form method="post">
+            <div class="form-group row">
+                <label class="sr-only">Email</label>
+                <input class="form-control" type="email" name="email" placeholder="somebody@example.com"/>
+            </div>
+
+            <div class="form-group row">
+                <label class="sr-only">Full Title</label>
+                <input pattern="^[a-zA-Z -.]+$" class="form-control" type="text" name="full-name" placeholder="Full Title"/>
+            </div>
+
+            <div class="form-group row">
+                <label class="sr-only">Password</label>
+                <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control" type="password" name="password" placeholder="Password"/>
+            </div>
+
+            <div class="form-group row">
+                <label class="sr-only">Confirm Password</label>
+                <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control" type="password" name="confirm-password" placeholder="Confirm Password"/>
+            </div>
+
+            <input type="submit" class="btn btn-outline-warning btn-sm btn-block"
+                   value="Register"/>
+        </form>
+        <br/>
+    </div>
+</div>

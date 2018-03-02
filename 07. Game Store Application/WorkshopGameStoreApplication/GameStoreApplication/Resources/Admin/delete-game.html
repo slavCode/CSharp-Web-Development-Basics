@@ -1,0 +1,63 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center"><h1 class="display-3">Delete Game - {{{title}}}</h1></div>
+            <br />
+            <form method="post">
+                <div class="form-group row">
+                    <label class="form-control-label">Title</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{{title}}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">Description</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{{description}}}</span>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="form-control-label">Thumbnail</label>
+                    <div class="input-group">
+                        <span style="display:block;text-overflow: ellipsis;width: 200px;overflow: hidden; white-space: nowrap;">
+                            {{{thumbnail}}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">Size</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{{size}}}</span>
+                        <span class="input-group-addon">GB</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">YouTube Video URL</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">https://www.youtube.com/watch?v=</span>
+                        <span class="input-group-addon">{{{videoId}}}</span>
+                        <span class="input-group-addon">GB</span>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">Release Date</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{{release-date}}}</span>
+                    </div>
+                </div>
+
+                <input type="submit" id="btn-add-game" class="btn btn-outline-danger btn-lg btn-block"
+                       value="Delete Game" />
+            </form>
+            <br />
+        </div>
+    </div>
+</div>
