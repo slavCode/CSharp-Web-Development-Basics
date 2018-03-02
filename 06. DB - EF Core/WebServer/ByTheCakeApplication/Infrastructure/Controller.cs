@@ -15,7 +15,7 @@
 
         protected IDictionary<string, string> ViewData { get; private set; }
 
-        protected Controller()
+        protected Controller() 
         {
 
             this.ViewData = new Dictionary<string, string>
